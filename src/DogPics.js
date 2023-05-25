@@ -10,10 +10,13 @@ function DogPics() {
     fetch("https://dog.ceo/api/breeds/image/random/3")
       .then((r) => r.json())
       .then((data) => {
-        console.log("setState");
         setImages(data.message);
       });
   });
+
+  useEffect(() => {
+    console.log("useEffect called");
+  }, []); // second argument is an empty array
 
   console.log("render");
 
